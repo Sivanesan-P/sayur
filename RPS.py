@@ -24,17 +24,7 @@ while True:
         you=list[2]
     else:
         break
-    if you=="Rock" and bot=="Scissors":
-        print("you:",you)
-        print("bot:",bot)
-        print("you win")
-        count+=1
-    elif you=="Paper" and bot=="Rock":
-        print("you:",you)
-        print("bot:",bot)
-        print("you win")
-        count+=1
-    elif you=="Scissors" and bot=="Paper":
+    if ((you=="Rock" and bot=="Scissors") or (you=="Paper" and bot=="Rock") or (you=="Scissors" and bot=="Paper") ):
         print("you:",you)
         print("bot:",bot)
         print("you win")
