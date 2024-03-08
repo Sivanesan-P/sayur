@@ -13,53 +13,33 @@
 # Use Arrays and while loop.
 import random
 
-def dice():
-    playerA=0
-    playerB=0
-    cha=0
-    rollCountA=0
-    rollCountB=0
-    while True:
-        dice=random.randint(1, 6)
-        cha+=1
-        if cha%2==1:
-            rollCountA+=1
+def play(dice):
             if dice==1 :
-                playerA+=1
+                return 1
             elif dice==2:
-                playerA+=5
+                return 5
             elif dice==3:
-                playerA+=15
+                return 15
             elif dice==4:
-                playerA-=15
+                return -15
             elif dice==5:
-                playerA-=5
+                return -5
             elif dice==6:
-                playerA-=1
-        elif cha%2==0:
-            rollCountB+=1
-            if dice==1:
-                playerB+=1
-            elif dice==2:
-                playerB+=5
-            elif dice==3:
-                 playerB+=15
-            elif dice==4:
-                playerB-=15
-            elif dice==5:
-                playerB-=5
-            elif dice==6:
-                playerB-=1
-        if playerA==100:
-            print("point of a: ",playerA,"  roll count: ",rollCountA)
-            print("point of b: ",playerB,"  roll count: ",rollCountB)
-            print("player A is a winner")
-            break
-        elif playerB==100:
-            print("point of a: ",playerA,"  roll count: ",rollCountA)
-            print("point of b: ",playerB,"  roll count: ",rollCountB)
-            print("player B is a winner")
-            break
+                return -1
+                
+def main():
+    scores=[0,0]
+    rolls=[0,0]
+    while True:
+        for i in range (2):
+            dice=random.randint(1, 6)
+            rolls[i] +=1
+            score=play(dice)
+            scores[i]+=score
+            if scores[i]==100:
+                 print("player ",i+1,"wins after ",rolls[i],"rolls")
+                 return
 
-dice()
+main()
+
 
