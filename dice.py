@@ -17,11 +17,14 @@ def dice():
     playerA=0
     playerB=0
     cha=0
+    rollCountA=0
+    rollCountB=0
     while True:
         dice=random.randint(1, 6)
         cha+=1
         if cha%2==1:
-            if dice==1:
+            rollCountA+=1
+            if dice==1 :
                 playerA+=1
             elif dice==2:
                 playerA+=5
@@ -34,6 +37,7 @@ def dice():
             elif dice==6:
                 playerA-=1
         elif cha%2==0:
+            rollCountB+=1
             if dice==1:
                 playerB+=1
             elif dice==2:
@@ -43,17 +47,17 @@ def dice():
             elif dice==4:
                 playerB-=15
             elif dice==5:
-             playerB-=5
-        elif dice==6:
-             playerB-=1
+                playerB-=5
+            elif dice==6:
+                playerB-=1
         if playerA==100:
-            print("point of a: ",playerA)
-            print("point of b: ",playerB)
+            print("point of a: ",playerA,"  roll count: ",rollCountA)
+            print("point of b: ",playerB,"  roll count: ",rollCountB)
             print("player A is a winner")
             break
         elif playerB==100:
-            print("point of a: ",playerA)
-            print("point of b: ",playerB)
+            print("point of a: ",playerA,"  roll count: ",rollCountA)
+            print("point of b: ",playerB,"  roll count: ",rollCountB)
             print("player B is a winner")
             break
 
