@@ -46,12 +46,12 @@ def dice():
              playerB-=5
         elif dice==6:
              playerB-=1
-        if playerA==10:
+        if playerA==100:
             print("point of a: ",playerA)
             print("point of b: ",playerB)
             print("player A is a winner")
             break
-        elif playerB==10:
+        elif playerB==100:
             print("point of a: ",playerA)
             print("point of b: ",playerB)
             print("player B is a winner")
