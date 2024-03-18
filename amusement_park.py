@@ -33,7 +33,7 @@ def bill(total):
     if current_day_name=='Thursday' or current_day_name=='Tuesday':
         disc=total*20/100
         total-=disc
-    print("your name: ",name)
+    print("Name: ",name)
     print("date of birth: ",dob)
     print("Age: ",age)
     print("you have booked on: ",ticket_date," , ",current_day_name)
