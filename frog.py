@@ -7,20 +7,14 @@
 # Output : [4,3,3,2,1]
 
 
-list=[1,4,1,3,1,2,2,1]
-m=list[0]
-list1=[]
-for i in range (len(list)):
-    for j in range(1,2):
-        if len(list)!=1:
-            if m<list[j]:
-                list.remove(m)
-                m=list[0]
-            else:
-                list1.append(m)
-                list.remove(m)
-                m=list[0]
-        else:
-            list1.append(m)
+def frog(i):
+    while i<len(list):
+        if list[i-1]<list[i]:
+            list.pop(i-1)
+        i+=1
+    print(list)
 
-print(list1)
+list=[1,4,1,3,1,2,2,1]
+i=1
+frog(i)
+
